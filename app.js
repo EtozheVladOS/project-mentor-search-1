@@ -41,8 +41,11 @@ app.use(morgan('dev'));
 
 // app.use('/', indexRouter);
 app.use("/personalacc",lcRouter)
+// app.use('/entries', mentorRouter);
 
 // app.use('/entries', entriesRouter);
+
+
 
 
 app.listen(PORT, () => {

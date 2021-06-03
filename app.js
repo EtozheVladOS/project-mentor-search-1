@@ -45,8 +45,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 app.use((req, res, next) => {
-  console.log(req.session)
-
   res.locals.name = req.session?.user?.name;
   next();
 })

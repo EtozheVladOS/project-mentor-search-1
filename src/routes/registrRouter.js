@@ -1,4 +1,5 @@
 const { Router } = require('express');
+
 const Ments = require('../db/models/ment.model');
 
 const mentRouter = Router();
@@ -12,7 +13,7 @@ mentRouter.post('/', async (req, res) => {
   if (name && email && password) {
     const newMent = await Ments.create({ name, email, password });
     if (newMent) {
-      req.session.user = { id: newMent._id };
+      req.session.user = { id: newMent._id, name: newMent.name };
       return res.redirect('/personalacc');
     }
   }

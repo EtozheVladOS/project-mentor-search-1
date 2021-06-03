@@ -41,7 +41,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 app.use('/', indexRouter);
-// app.use('/entries', entriesRouter);
+app.use('/entries', entriesRouter);
+
+
 
 app.use(sessions({
   secret: secretKey,

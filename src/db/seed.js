@@ -4,7 +4,7 @@ const Ments = require('./models/ment.model');
 
 const tagsMain = [
   {
-    name: 'Java Script',
+    name: 'JavaScript',
   },
   {
     name: 'Pyton',
@@ -25,7 +25,7 @@ const tagsMain = [
     name: 'Java',
   },
   {
-    name: 'Goolang',
+    name: 'Golang',
   },
 ];
 

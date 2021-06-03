@@ -1,0 +1,19 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  {{#if mentors}}
+  {{#each mentors}}
+  <div class="col">
+    <div class="card">
+      <img src={{this.image}} class="card-img-top" alt="None">
+      <div class="card-body">
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text">{{}}</p>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+  {{else}}
+  <p class="card-text">Менторов пока нет :(</p>
+  {{/if}}
+
+</div>

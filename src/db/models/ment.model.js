@@ -37,6 +37,10 @@ const mentSchema = mongoose.Schema({
     type: String,
     requried: true,
   },
+  city: {
+    type: String,
+    requried: true,
+  },
   tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tags" }],
 });
 

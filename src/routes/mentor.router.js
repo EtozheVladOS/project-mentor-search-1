@@ -5,9 +5,9 @@ const router = Router();
 
 router.get('/:id', async (req, res) => {
   try {
-    const { mentorId } = req.params;
-    await Ments.findById(mentorId);
-    res.render('mentor');
+    const { id } = req.params;
+    const mentor = await Ments.findById(id);
+    res.render('mentor', { ments: mentor });
   } catch (error) {
     return res.redirect('/');
   }

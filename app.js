@@ -8,6 +8,9 @@ const { connect } = require('./src/db/db');
 const indexRouter = require('./src/routes/index.router');
 
 // const entriesRouter = require('./routes/entries');
+// const indexRouter = require('./src/routes/index.router');
+const mentorRouter = require('./src/routes/mentor.router');
+
 
 const PORT = 3000;
 const app = express();
@@ -40,20 +43,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
+
 app.use('/', indexRouter);
-// app.use('/entries', mentorRouter);
-
-// app.use('/entries', entriesRouter);
-
-app.use(sessions({
-  secret: secretKey,
-  resave: false, // ПЕРЕСОХРАНЯТЬ СЕССИЮ НА СЕРВЕРЕ ЕСЛИ ТРУ
-  saveUninitialized: false, // ЕСЛИ ПОЛЬЗОВАТЕЛЬ ПРИШЕЛ НА САЙТ ПОД НЕГО СОЗДАЕТСЯ ПУСТАЯ СЕССИЯ
-  cookie: {
-    secure: true,
-    httpOnly: true,
-  },
-}));
+app.use('/mentor', mentorRouter);
 
 app.listen(PORT, () => {
   console.log('Server started on PORT', PORT);

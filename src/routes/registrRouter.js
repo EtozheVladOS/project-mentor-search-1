@@ -1,11 +1,12 @@
-const { Router } = require("express");
-//const { route } = require('../app');
-const Ments = require("../db/models/ment.model");
+const { Router } = require('express');
+const Ments = require('../db/models/ment.model');
 
 const mentRouter = Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 // ПАКЕТ ДЛЯ СОЗДАНИЯ ПАРОЛЯ
 const saltRound = 10; // ПО СТАНДАРТУ (подключения)
+
+// npm i bcrypt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 mentRouter.get("/", (req, res) => {
@@ -14,8 +15,9 @@ mentRouter.get("/", (req, res) => {
 
 mentRouter.post("/", async (req, res) => {
   
-  const { name, email, password } = req.body;
-  if (name && email && password) {
+  const { name, email, password: cryptPass } = req.body;
+  if (name && email && cryptPass) {
+    const password = await bcrypt.hash(cryptPass, saltRound);
     const newMent = await Ments.create({ name, email, password });
      if (newMent){
       req.session.user = {id: newMent._id}

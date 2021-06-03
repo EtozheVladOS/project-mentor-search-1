@@ -46,12 +46,12 @@ app.use(sessionParser);
 app.use(express.static(path.join(process.env.PWD, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev"));
+app.use(morgan('dev'));
 
 app.use('/', indexRouter);
 app.use('/mentor', mentorRouter);
-app.use("/signIn", signInRender);
-app.use("/signUp", registrRouter);
+app.use('/signIn', signInRender);
+app.use('/signUp', registrRouter);
 app.use('/logout', signOutRouter);
 
 app.listen(PORT, () => {

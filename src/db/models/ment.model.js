@@ -1,22 +1,22 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const mentSchema = mongoose.Schema({
 
   name: {
     type: String,
     requried: true,
-    min: 3
+    min: 3,
   },
   mail: {
     type: String,
     requried: true,
     min: 5,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
     requried: true,
-    min: 4
+    min: 4,
 
   },
   image: {
@@ -31,7 +31,7 @@ const mentSchema = mongoose.Schema({
     type: Number,
     requried: true,
   },
-  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tags'}]
-})
+  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tags' }],
+});
 
-module.exports = mongoose.model('Ments', mentSchema)
+module.exports = mongoose.model('Ments', mentSchema);

@@ -7,4 +7,4 @@ const tagSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Tags', tagSchema)
+module.exports = mongoose.model('Tags', tagSchema);

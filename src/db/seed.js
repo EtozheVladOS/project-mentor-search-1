@@ -69,4 +69,4 @@ async function seed2() {
   connect();
   return Promise.all(mentorsFirst.map((mt) => Ments.create(mt)));
 }
-seed2().then(() => disconnect())
+seed2().then(() => disconnect());

@@ -3,9 +3,9 @@ const { Router } = require("express");
 const Ments = require("../db/models/ment.model");
 
 const mentRouter = Router();
-const bcrypt = require("bcrypt");
-// ПАКЕТ ДЛЯ СОЗДАНИЯ ПАРОЛЯ
-const saltRound = 10; // ПО СТАНДАРТУ (подключения)
+// const bcrypt = require("bcrypt");
+// // ПАКЕТ ДЛЯ СОЗДАНИЯ ПАРОЛЯ
+// const saltRound = 10; // ПО СТАНДАРТУ (подключения)
 
 
 mentRouter.get("/", (req, res) => {

@@ -5,11 +5,5 @@ router.get("/", (req, res) => {
     res.render("index");
 });
 
-router.get("/personalacc", async (req, res) => {
-  const mentor =  await Ments.find();
-  console.log(mentor[0]);
-    res.render("personalacc", { mentor });
-});
-
 module.exports = router;
  

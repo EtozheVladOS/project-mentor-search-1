@@ -39,6 +39,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 app.use('/', indexRouter);
+app.use('/personalacc, indexRouter);
+
 // app.use('/entries', entriesRouter);
 
 

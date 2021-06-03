@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const mentSchema = mongoose.Schema({
-
   name: {
     type: String,
     requried: true,
@@ -17,7 +16,6 @@ const mentSchema = mongoose.Schema({
     type: String,
     requried: true,
     min: 4,
-
   },
   image: {
     type: String,
@@ -31,7 +29,19 @@ const mentSchema = mongoose.Schema({
     type: Number,
     requried: true,
   },
-  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tags' }]
+  description: {
+    type: String,
+    requried: true,
+  },
+  occupation: {
+    type: String,
+    requried: true,
+  },
+  city: {
+    type: String,
+    requried: true,
+  },
+  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tags' }],
 });
 
 module.exports = mongoose.model('Ments', mentSchema);

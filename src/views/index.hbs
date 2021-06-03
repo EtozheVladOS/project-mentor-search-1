@@ -1,13 +1,32 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        {{#each tags}}
+        <a class="nav-link" href="/tag/{{this._id}}">{{this.name}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" id="allCards">
 
   {{#if mentors}}
   {{#each mentors}}
   <div class="col">
-    <div class="card">
-      <img src={{this.image}} class="card-img-top" alt="None">
+    <div class="card" data-id={{this._id}}>
+      <img src={{this.image}} width="100" height="300" class="card-img-top" alt="None">
       <div class="card-body">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          {{#if this.tags}}
+          {{#each this.tags}}
+          <a href="/tag/{{this._id}}" class="btn btn-outline-primary">{{this.name}}</a>
+          {{/each}}
+          {{/if}}
+        </div>
         <h5 class="card-title">{{this.name}}</h5>
-        <p class="card-text">{{}}</p>
+        <p class="card-text">{{this.occupation}}</p>
       </div>
     </div>
   </div>

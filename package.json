@@ -4,6 +4,8 @@
   "description": "Bears MSK 2021 group project",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "seed": "node ./src/db/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const secretKey = require('crypto').randomBytes(64).toString('hex');
 const { connect } = require('./src/db/db');
 const indexRouter = require('./src/routes/index.router')
+const lcRouter = require('./src/routes/lc.router')
 
 const PORT = 3000;
 const app = express();
@@ -38,8 +39,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-app.use('/', indexRouter);
-app.use('/personalacc, indexRouter);
+// app.use('/', indexRouter);
+app.use("/personalacc",lcRouter)
 
 // app.use('/entries', entriesRouter);
 

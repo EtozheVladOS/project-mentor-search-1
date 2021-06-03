@@ -19,6 +19,12 @@ const mentSchema = mongoose.Schema({
     min: 4
 
   },
+  description: {
+    type: String,
+    requried: true,
+    min: 200,
+
+  },
   image: {
     type: String,
     requried: true,

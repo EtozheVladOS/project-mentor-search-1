@@ -11,23 +11,27 @@ const indexRouter = require('./src/routes/index.router');
 // const indexRouter = require('./src/routes/index.router');
 const mentorRouter = require('./src/routes/mentor.router');
 
+const registrRouter = require('./src/routes/registrRouter');
+const signInRender = require('./src/routes/signinRouter');
+const signOutRouter = require('./src/routes/signOut');
+
 
 const PORT = 3000;
 const app = express();
 
 connect();
 
-app.set('view engine', 'hbs');
-app.set('cookieName', 'userCookie');
-app.set('views', path.join(process.env.PWD, 'src', 'views'));
+app.set("view engine", "hbs");
+app.set("cookieName", "userCookie");
+app.set("views", path.join(process.env.PWD, "src", "views"));
 
 const sessionParser = sessions({
-  name: app.get('cookieName'),
+  name: app.get("cookieName"),
   secret: secretKey,
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: 'mongodb://localhost:27017/MENTORS',
+    mongoUrl: "mongodb://localhost:27017/MENTORS",
   }),
   cookie: {
     secure: true,
@@ -38,15 +42,18 @@ const sessionParser = sessions({
 
 app.use(sessionParser);
 
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.static(path.join(process.env.PWD, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('dev'));
-
+app.use(morgan("dev"));
 
 app.use('/', indexRouter);
 app.use('/mentor', mentorRouter);
+app.use("/signIn", signInRender);
+app.use("/signUp", registrRouter);
+app.use('/logout', signOutRouter);
 
 app.listen(PORT, () => {
-  console.log('Server started on PORT', PORT);
+  console.log("Server started on PORT", PORT);
 });

@@ -6,11 +6,11 @@ const mentSchema = mongoose.Schema({
     requried: true,
     min: 3,
   },
-  mail: {
+  email: {
     type: String,
     requried: true,
     min: 5,
-    unique: true,
+    
   },
   password: {
     type: String,

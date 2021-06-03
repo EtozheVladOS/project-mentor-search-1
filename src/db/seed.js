@@ -37,7 +37,7 @@ const mentorsFirst = [
     image: 'https://dacha.avgust.com/upload/medialibrary/1af/1afb13e84f65d6d4f45a1754758f486d.jpg',
     experience: 5,
     price: 3000,
-    tags: 0,
+    tags: [],
   },
   {
     name: 'Петров Пётр Петрович',
@@ -46,7 +46,7 @@ const mentorsFirst = [
     image: 'https://storage.yandexcloud.net/incrussia-prod/wp-content/uploads/2018/10/Mole_Cover.jpg',
     experience: 3,
     price: 2000,
-    tags: 0,
+    tags: [],
   },
   {
     name: 'Сидоров Сидр Сидорович',
@@ -55,7 +55,7 @@ const mentorsFirst = [
     image: 'https://static.dw.com/image/51117271_401.jpg',
     experience: 1,
     price: 1000,
-    tags: 0,
+    tags: [],
   },
 ];
 
@@ -69,4 +69,4 @@ async function seed2() {
   connect();
   return Promise.all(mentorsFirst.map((mt) => Ments.create(mt)));
 }
-// seed2().then(() => disconnect())
+seed2().then(() => disconnect())

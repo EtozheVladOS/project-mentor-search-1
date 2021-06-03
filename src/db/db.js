@@ -8,5 +8,7 @@ function connect() {
     console.log('Установлено успешное подключение к Базе Данных!');
   });
 }
-
-module.exports = { connect };
+function disconnect() {
+  mongoose.disconnect()
+}
+module.exports = { connect,disconnect };

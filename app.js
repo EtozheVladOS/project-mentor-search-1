@@ -5,7 +5,9 @@ const MongoStore = require('connect-mongo');
 const morgan = require('morgan');
 const secretKey = require('crypto').randomBytes(64).toString('hex');
 const { connect } = require('./src/db/db');
-const indexRouter = require('./src/routes/index.router')
+const indexRouter = require('./src/routes/index.router');
+const entriesRouter = require('./routes/entries');
+
 
 const PORT = 3000;
 const app = express();
@@ -41,6 +43,17 @@ app.use(morgan('dev'));
 app.use('/', indexRouter);
 // app.use('/entries', entriesRouter);
 
+app.use(sessions({
+  secret: secretKey,
+  resave: false, // ПЕРЕСОХРАНЯТЬ СЕССИЮ НА СЕРВЕРЕ ЕСЛИ ТРУ
+  saveUninitialized: false, // ЕСЛИ ПОЛЬЗОВАТЕЛЬ ПРИШЕЛ НА САЙТ ПОД НЕГО СОЗДАЕТСЯ ПУСТАЯ СЕССИЯ
+  cookie: {
+    secure: true,
+    httpOnly: true,
+  },
+}));
+
+app.use('/entries', mentorRouter);
 
 app.listen(PORT, () => {
   console.log('Server started on PORT', PORT);

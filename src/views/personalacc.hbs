@@ -15,9 +15,12 @@
     class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.description}}</textarea>
 
 
-  <label for="body-textarea" class="w-25 ">Ваш опыт:</label>
-  <textarea id="body-textarea" name="experience" tabindex="2"
-    class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.experience}}</textarea>
+  <label for="title-input" class="block mar-b-1">Ваш опыт</label>
+  <select name="experience"  size=3>
+  <option>1</option>
+  <option >3</option>
+  <option >5</option>
+</select>
     
 
     <label for="body-textarea" class="block mar-b-1">Желаемая оплата за час( в рублях)</label>
@@ -31,8 +34,7 @@
      <label for="body-textarea" class="block mar-b-1" >Город</label>
     <textarea id="body-textarea" name="city" tabindex="2"
     class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.city}}</textarea>
-
-
+  
 <label for="title-input" class="block mar-b-1">Ключевые навыки (через Сtrl)</label>
   <select name="tags" multiple="multiple"  size=8>
   <option>Java Script</option>
@@ -52,10 +54,6 @@
 </div>    
 <div>
 
- <form enctype="multipart/form-data" method="post">
-   <p><input type="file" name="f">
-   <input type="submit" value="Отправить"></p>
-  </form> 
 
 </div>
 

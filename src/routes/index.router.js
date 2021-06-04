@@ -28,4 +28,8 @@ router.get('/tag/:id', async (req, res) => {
   res.render('tag', { tagsq, resMentors });
 });
 
+router.get('/search', (req, res) => {
+  res.render('search');
+});
+
 module.exports = router;

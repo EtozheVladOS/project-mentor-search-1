@@ -83,14 +83,14 @@ const mentorsFirst = [
   },
 ];
 
-async function seed1() {
-  connect();
-  return Promise.all(tagsMain.map((tg) => Tags.create(tg)));
-}
-seed1().then(() => disconnect());
+// async function seed1() {
+//   connect();
+//   return Promise.all(tagsMain.map((tg) => Tags.create(tg)));
+// }
+// seed1().then(() => disconnect());
 
-async function seed2() {
-  connect();
-  return Promise.all(mentorsFirst.map((mt) => Ments.create(mt)));
-}
-seed2().then(() => disconnect());
+// async function seed2() {
+//   connect();
+//   return Promise.all(mentorsFirst.map((mt) => Ments.create(mt)));
+// }
+// seed2().then(() => disconnect());

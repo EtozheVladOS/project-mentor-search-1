@@ -31,3 +31,7 @@ body {
 #searchbutton {
   background-color: #586d8d;
 }
+
+.mentors-image-ava{
+  object-fit: cover;
+}

@@ -17,6 +17,12 @@ const mentSchema = mongoose.Schema({
     requried: true,
     min: 4,
   },
+  description: {
+    type: String,
+    requried: true,
+    min: 200,
+
+  },
   image: {
     type: String,
     requried: true,
@@ -29,6 +35,7 @@ const mentSchema = mongoose.Schema({
     type: Number,
     requried: true,
   },
+  // eslint-disable-next-line no-dupe-keys
   description: {
     type: String,
     requried: true,

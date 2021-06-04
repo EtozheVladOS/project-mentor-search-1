@@ -14,7 +14,6 @@ router.get('/tag/:id', async (req, res) => {
   const tagId = req.params.id;
   const tagsq = await TagModel.find().limit(8);
   const allMentorsObj = await MentorModel.find();
-  console.log(allMentorsObj);
   const allMentArr = allMentorsObj.map((el) => {
     if (el.tags.includes(tagId)) {
       return el;
@@ -27,6 +26,10 @@ router.get('/tag/:id', async (req, res) => {
     if (el) resMentors.push(el);
   }
   res.render('tag', { tagsq, resMentors });
+});
+
+router.get('/search', (req, res) => {
+  res.render('search');
 });
 
 module.exports = router;

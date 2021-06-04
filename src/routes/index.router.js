@@ -1,13 +1,12 @@
 const { Router } = require('express');
 
 const router = Router();
-const mongoose = require('mongoose');
 const MentorModel = require('../db/models/ment.model');
 const TagModel = require('../db/models/tag.model');
 
 router.get('/', async (req, res) => {
   const tags = await TagModel.find().limit(8);
-  const mentors = await MentorModel.find().sort({ _id: -1 }).limit(6).populate('tags');
+  const mentors = await MentorModel.find({image: {$exists: true}}).sort({ _id: -1 }).limit(6).populate('tags');
   const sessionTrue = res.locals.newId;
   console.log(sessionTrue);
   console.log(req.session.newId);

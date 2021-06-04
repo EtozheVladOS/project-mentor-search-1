@@ -5,18 +5,21 @@ const mongoose = require('mongoose');
 const MentorModel = require('../db/models/ment.model');
 const TagModel = require('../db/models/tag.model');
 
-router.get('/sarch', async (req, res) => {
+router.get('/', async (req, res) => {
   const tags = await TagModel.find().limit(8);
   res.render('search', { tags });
 });
 
 router.post('/', async (req, res) => {
-  const { searchParams, textFromSearch } = req.body;
+  const { searchParams, textFromSearch, expSearch } = req.body;
   switch (searchParams) {
     case '1':
       try {
         const curTec = await TagModel.findOne({ name: textFromSearch });
-        const allMentorsObj = await MentorModel.find();
+        let allMentorsObj;
+        if (expSearch) {
+          allMentorsObj = await MentorModel.find({ experience: expSearch });
+        } else allMentorsObj = await MentorModel.find();
         const allMentArr = allMentorsObj.map((el) => {
           if (el.tags.includes(curTec._id)) {
             return el;
@@ -33,12 +36,16 @@ router.post('/', async (req, res) => {
         res.sendStatus(400);
         break;
       }
+
     case '2':
-      console.log(2);
-      break;
-    case '3':
-      console.log(3);
-      break;
+      try {
+        const allMentorsObj = await MentorModel.find({ name: textFromSearch });
+        res.json(allMentorsObj);
+        break;
+      } catch {
+        res.sendStatus(400);
+        break;
+      }
     default:
       break;
   }

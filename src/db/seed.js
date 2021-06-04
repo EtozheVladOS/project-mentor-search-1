@@ -4,7 +4,7 @@ const Ments = require('./models/ment.model');
 
 const tagsMain = [
   {
-    name: 'Java Script',
+    name: 'JavaScript',
   },
   {
     name: 'Pyton',
@@ -25,7 +25,7 @@ const tagsMain = [
     name: 'Java',
   },
   {
-    name: 'Goolang',
+    name: 'Golang',
   },
 ];
 
@@ -38,6 +38,8 @@ const mentorsFirst = [
     experience: 5,
     price: 3000,
     tags: [],
+    city: 'Москва',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     name: 'Петров Пётр Петрович',
@@ -47,6 +49,8 @@ const mentorsFirst = [
     experience: 3,
     price: 2000,
     tags: [],
+    city: 'Москва',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     name: 'Сидоров Сидр Сидорович',
@@ -56,6 +60,8 @@ const mentorsFirst = [
     experience: 1,
     price: 1000,
     tags: [],
+    city: 'Москва',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];
 
@@ -69,4 +75,4 @@ async function seed2() {
   connect();
   return Promise.all(mentorsFirst.map((mt) => Ments.create(mt)));
 }
-seed2().then(() => disconnect())
+seed2().then(() => disconnect());

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const mentSchema = mongoose.Schema({
   name: {
@@ -6,11 +6,11 @@ const mentSchema = mongoose.Schema({
     requried: true,
     min: 3,
   },
-  mail: {
+  email: {
     type: String,
     requried: true,
     min: 5,
-    unique: true,
+    
   },
   password: {
     type: String,
@@ -48,7 +48,7 @@ const mentSchema = mongoose.Schema({
     type: String,
     requried: true,
   },
-  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tags" }],
+  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tags' }],
 });
 
-module.exports = mongoose.model("Ments", mentSchema);
+module.exports = mongoose.model('Ments', mentSchema);

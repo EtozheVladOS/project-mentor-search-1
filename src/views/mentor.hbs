@@ -1,0 +1,19 @@
+<div class="mentorcontainer">
+<center>
+{{#if ments}}
+<div class="card" style="width: 50rem">
+  <img src="{{ments.image}}" class="card-img-top" alt="{{ments.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ments.name}}</h5>
+    <p class="card-city">{{ments.city}}</p>
+    <p class="card-occupation">Должность: {{ments.occupation}}</p>
+    <p class="card-experience">Опыт: {{ments.experience}} лет</p>
+    <p class="card-price">Стоимость часа: {{ments.price}} рублей</p>
+    <p class="card-description">{{ments.description}}</p>
+    <p class="card-tags">{{ments.tags}}</p>
+    <a href="#" class="btn btn-primary">Оставить заявку</a>
+  </div>
+  {{/if}}
+</div>
+</center>
+</div>

@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script defer src="/index.mainPage.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
     integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <title>MentorsSEARCH</title>
@@ -14,11 +17,18 @@
   <div class="d-flex justify-content-around">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
+        {{#if sessionTrue}}
+        <a class="navbar-brand" href="/">Главная</a>
+        <a class="navbar-brand" href="/personalacc">Личный кабинет</a>
+        <a class="navbar-brand" href="/search">Поиск ментора</a>
+         <a class="navbar-brand" href="/logout">Выйти</a>
+
+      {{else}}
+        <a class="navbar-brand" href="/">Главная</a>
         <a class="navbar-brand" href="/search">Поиск ментора</a>
         <a class="navbar-brand" href="/signIn">Войти</a>
         <a class="navbar-brand" href="/signUp">Регистрация</a>
-        <a class="navbar-brand" href="/logout">Выйти</a>
-        <a class="navbar-brand" href="/personalacc">Личный кабинет</a>
+       {{/if}}
       </div>
     </nav>
   </div>

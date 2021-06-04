@@ -47,7 +47,7 @@ app.use(morgan('dev'));
 app.use((req, res, next) => {
   res.locals.name = req.session?.user?.name;
   next();
-})
+});
 app.use('/', indexRouter);
 app.use('/mentor', mentorRouter);
 app.use('/signIn', signInRender);

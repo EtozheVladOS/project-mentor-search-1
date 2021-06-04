@@ -7,7 +7,7 @@ router.get('/:id', async (req, res) => {
   let sessionTrue = res.locals.newId;
   try {
     const { id } = req.params;
-    const mentor = await Ments.findById(id);
+    const mentor = await Ments.findById(id).populate('tags');
     res.render('mentor', { ments: mentor, sessionTrue });
   } catch (error) {
     return res.redirect('/');

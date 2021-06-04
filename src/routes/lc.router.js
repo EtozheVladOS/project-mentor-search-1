@@ -1,42 +1,36 @@
-const { findById, findByIdAndUpdate } = require("../db/models/ment.model");
-const Ments = require("../db/models/ment.model");
-const Tags = require("../db/models/tag.model");
-const router = require("express").Router();
+/* eslint-disable no-await-in-loop */
+const { findById, findByIdAndUpdate } = require('../db/models/ment.model');
+const Ments = require('../db/models/ment.model');
+const Tags = require('../db/models/tag.model');
+const router = require('express').Router();
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   if (res.locals.newId) {
     // console.log("est?????", res.locals.newId);
-    let sessionTrue = res.locals.newId;
+    const sessionTrue = res.locals.newId;
     const mentor = await Ments.findById(sessionTrue);
     const mentorElit = mentor;
-    res.render("personalacc", { mentorElit, sessionTrue });
+    const allTags = await Tags.find();
+    res.render('personalacc', { mentorElit, sessionTrue, allTags });
+  } else {
+    res.redirect('/signIn');
   }
-  else {
-    res.redirect("/signIn")
-  }
-
 });
 
-async function add(updateUser, tags) {
-  // console.log("ДЛИНА", updateUser.tags.length);
-  let arr = tags;
-  // console.log(arr.length)
-  // console.log("arrr", tags)
-  for (let i = 0; i < arr.length; i++) {
-    let tag = await Tags.findOne({ name: arr[i] });
-
+async function add(updateUser, arr) {
+  for (let i = 0; i < arr.length; i += 1) {
+    const tag = await Tags.findOne({ name: arr[i] });
     await updateUser.tags.push(tag);
-    console.log(tag)
     await updateUser.save();
   }
-
 }
 
-router.post("/", async (req, res) => {
-  let sessionTrue = res.locals.newId;
+router.post('/', async (req, res) => {
+  console.log('VOT TUT', req.body);
+  const sessionTrue = res.locals.newId;
   const mentor = await Ments.findById(sessionTrue);
   const mentorElit = mentor;
-  // console.log("ona tyt est", req.body);
+  let arr = req.body.tags;
   // eslint-disable-next-line max-len
   const updateUser = await Ments.findByIdAndUpdate(
     sessionTrue,
@@ -49,26 +43,22 @@ router.post("/", async (req, res) => {
       city: req.body.city,
       tags: [],
     },
-    { new: true }
+    { new: true },
   );
   await updateUser.save();
-
   await add(updateUser, req.body.tags);
-  console.log(updateUser)
-
-  await res.redirect("/");
+  await res.redirect('/');
 });
 
 router.get('/:id', async (req, res) => {
-  let id = req.params.id;
-  let newId = id.slice(1);
+  let { id } = req.params;
+  const newId = id.slice(1);
   await Ments.findByIdAndDelete(newId);
   req.session.destroy((err) => {
     if (err) return res.redirect('/');
     res.clearCookie(req.app.get('cookieName'));
     return res.redirect('/');
   });
-  return res.redirect("/")
-
-})
+  return res.redirect('/');
+});
 module.exports = router;

@@ -9,15 +9,13 @@ $mentorCard?.addEventListener('click', (event) => {
 
 $signUpCheckBos?.addEventListener('click', (event) => {
   if (event.target.value === '2') {
-    let $mentForm = document.querySelector('#mentForm1');
-    console.log($mentForm);
+    const $mentForm = document.querySelector('#mentForm1');
     $mentForm?.remove();
+    // eslint-disable-next-line no-use-before-define
     $containerForMentorsForm.insertAdjacentHTML('afterbegin', formForMent);
   }
   else if (event.target.value === '1') {
-    console.log(event.target.value);
-    let $mentForm = document.querySelector('#mentForm1');
-    console.log($mentForm);
+    const $mentForm = document.querySelector('#mentForm1');
     $mentForm?.remove();
   }
 });

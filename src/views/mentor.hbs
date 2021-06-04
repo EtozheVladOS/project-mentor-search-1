@@ -10,7 +10,9 @@
     <p class="card-experience">Опыт(лет): {{ments.experience}}</p>
     <p class="card-price">Стоимость часа: {{ments.price}} рублей</p>
     <p class="card-description">{{ments.description}}</p>
-    <p class="card-tags">{{ments.tags}}</p>
+    {{#each ments.tags}}
+    <p class="card-tags">{{this.name}}</p>
+    {{/each}}
     <a href="#" class="btn btn-primary" id="mentorbutton">Оставить заявку</a>
   </div>
   {{/if}}

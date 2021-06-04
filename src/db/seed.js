@@ -7,7 +7,7 @@ const tagsMain = [
     name: 'JavaScript',
   },
   {
-    name: 'Pyton',
+    name: 'Python',
   },
   {
     name: 'HTML',
@@ -26,6 +26,24 @@ const tagsMain = [
   },
   {
     name: 'Golang',
+  },
+  {
+    name: 'Ruby',
+  },
+  {
+    name: 'React',
+  },
+  {
+    name: 'PHP',
+  },
+  {
+    name: 'Kotlin',
+  },
+  {
+    name: 'Swift',
+  },
+  {
+    name: 'SQL',
   },
 ];
 

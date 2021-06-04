@@ -35,7 +35,7 @@ const sessionParser = sessions({
     mongoUrl: 'mongodb://localhost:27017/MENTORS',
   }),
   cookie: {
-    secure: true,
+    // secure: true,
     httpOnly: true,
     maxAge: 100000000,
   },
@@ -48,6 +48,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
+app.use((req, res, next) => {
+  console.log(req.session)
+
+  res.locals.name = req.session?.user?.name;
+  next();
+})
 app.use('/', indexRouter);
 app.use('/mentor', mentorRouter);
 app.use('/signIn', signInRender);

@@ -10,7 +10,7 @@ const mentSchema = mongoose.Schema({
     type: String,
     requried: true,
     min: 5,
-    
+
   },
   password: {
     type: String,

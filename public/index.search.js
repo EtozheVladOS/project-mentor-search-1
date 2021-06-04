@@ -1,6 +1,5 @@
 const $form = document.querySelector('#searchForm');
 const $cardsContainer = document.querySelector('#cardContainer');
-const $curCards = document.querySelector('[name="card"]');
 
 $form?.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -13,9 +12,12 @@ $form?.addEventListener('submit', async (event) => {
     body: JSON.stringify(dataFromForm),
   });
   if (responce.status === 400) {
-    alert('wrong');
+    const $curCards = document.querySelector('[name="card"]');
+    $curCards?.remove();
+    $cardsContainer.insertAdjacentHTML('afterbegin', '<p name="card">Ничего не нашлось :(</p>');
   }
   else {
+    const $curCards = document.querySelector('[name="card"]');
     $curCards?.remove();
     const dataFromServer = await responce.json();
     const newCards = createHtmlCard(dataFromServer);
@@ -33,7 +35,7 @@ function createHtmlCard(newCards) {
       <div class="card-body">
         <div class="btn-group" role="group" aria-label="Basic outlined example">
         </div>
-        <h5 class="card-title">${card.name}}</h5>
+        <h5 class="card-title">${card.name}</h5>
         <p class="card-text">${card.occupation}</p>
       </div>
     </div>

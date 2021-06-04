@@ -1,59 +1,57 @@
+<h2 class="d-flex justify-content-center align-items-center">Редактирование вашей анкеты</h2>
 
-                        <h2 class = "d-flex justify-content-center align-items-center">Редактирование вашей анкеты</h2>
-                        
- <div class = "d-flex justify-content-center align-items-center"> 
-   <div class="w-50 p-10 " style="background-color: #eee;">           
-<form id="editEntryForm" method="POST">
-  <div class="d-flex justify-content-center">
-    <img src = {{mentorElit.image}} width="400px" height=" 300px" >
+<div class="d-flex justify-content-center align-items-center">
+  <div class="w-50 p-10 " style="background-color: #eee;">
+    <form id="editEntryForm" method="POST">
+      <div class="d-flex justify-content-center">
+        <img src={{mentorElit.image}} width="400px" height=" 300px">
+      </div>
+      <label for="title-input" class="block mar-b-1">Ссылка на вашу фотографию</label>
+      <input id="title-input" name="image" type="text" value="{{mentorElit.image}}" tabindex="1"
+        class="block w-100 no-outline no-border pad-1 mar-b-2">
+      <label for="body-textarea" class="block mar-b-1">Коротко о себе</label>
+      <textarea name="description" tabindex="2"
+        class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.description}}</textarea>
+
+
+      <label for="title-input" class="block mar-b-1">Ваш опыт</label>
+      <select name="experience" size=3>
+        <option>1</option>
+        <option>3</option>
+        <option>5</option>
+      </select>
+
+
+      <label for="body-textarea" class="block mar-b-1">Желаемая оплата за час( в рублях)</label>
+      <textarea id="body-textarea" name="price" tabindex="2"
+        class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.price}}</textarea>
+
+      <label for="body-textarea" class="block mar-b-1">Карьера</label>
+      <textarea id="body-textarea" name="occupation" tabindex="2"
+        class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.occupation}}</textarea>
+
+      <label for="body-textarea" class="block mar-b-1">Город</label>
+      <textarea id="body-textarea" name="city" tabindex="2"
+        class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.city}}</textarea>
+
+      <label for="title-input" class="block mar-b-1">Ключевые навыки (через Сtrl)</label>
+      <select name="tags" multiple="multiple" size=8>
+        <option>Java Script</option>
+        <option>Pyton</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>C++</option>
+        <option>C#</option>
+        <option>Java</option>
+        <option>Goolang</option>
+      </select>
+
+      <input type="submit" value="Update" tabindex="3"
+        class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+    </form>
   </div>
-  <label for="title-input" class="block mar-b-1">Ссылка на вашу фотографию</label>
-  <input id="title-input" name="image" type="text" value="{{mentorElit.image}}" tabindex="1"
-    class="block w-100 no-outline no-border pad-1 mar-b-2">
-   <label for="body-textarea" class="block mar-b-1">Коротко о себе</label>
-  <textarea name="description" tabindex="2"
-    class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.description}}</textarea>
-
-
-  <label for="title-input" class="block mar-b-1">Ваш опыт</label>
-  <select name="experience"  size=3>
-  <option>1</option>
-  <option >3</option>
-  <option >5</option>
-</select>
-    
-
-    <label for="body-textarea" class="block mar-b-1">Желаемая оплата за час( в рублях)</label>
-  <textarea id="body-textarea" name="price" tabindex="2"
-    class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.price}}</textarea>
-
-     <label for="body-textarea" class="block mar-b-1">Карьера</label>
-    <textarea id="body-textarea" name="occupation" tabindex="2"
-    class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.occupation}}</textarea>
-
-     <label for="body-textarea" class="block mar-b-1" >Город</label>
-    <textarea id="body-textarea" name="city" tabindex="2"
-    class="block w-100 h-10 no-resize no-outline no-border no-resize pad-1 mar-b-2">{{mentorElit.city}}</textarea>
-  
-<label for="title-input" class="block mar-b-1">Ключевые навыки (через Сtrl)</label>
-  <select name="tags" multiple="multiple"  size=8>
-  <option>Java Script</option>
-  <option >Pyton</option>
-  <option>HTML</option>
-  <option>CSS</option>
-  <option>C++</option>
-  <option>C#</option>
-  <option>Java</option>
-  <option>Goolang</option>
-</select>
-
-  <input type="submit" value="Update" tabindex="3"
-    class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
-</form>
-</div>   
-</div>    
+</div>
 <div>
 
 
 </div>
-

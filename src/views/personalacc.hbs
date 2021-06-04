@@ -1,1 +1,59 @@
-qu qu
+<h2 class="d-flex justify-content-center align-items-center">Редактирование вашей анкеты</h2>
+    <div class="mb-3" id="mentForm1">
+      <div class="d-flex justify-content-center">
+        <img src="{{mentorElit.image}}" width="400px" height="300px">
+      </div>
+      <form method="POST">
+        <label for="exampleFormControlInput1" class="form-label">Ссылка на вашу фотографию</label>
+        <input name="image" type="text" class="form-control " id="exampleFormControlInput1"
+          value="{{mentorElit.image}}">
+        <label for="exampleFormControlInput2" class="form-label">Коротко о себе</label>
+        <input name="description" type="text" class="form-control" id="exampleFormControlInput1"
+          value="{{mentorElit.description}}">
+        <div name="experience">
+          <p>Ваш опыт </p>
+          <div class="form-check form-check-inline">
+            <input name="experience" value="1" class="form-check-input" type="radio" id="inlineCheckbox1">
+            <label class="form-check-label" for="inlineCheckbox1">От 1 года</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input name="experience" value="3" class="form-check-input" type="radio" id="inlineCheckbox2">
+            <label class="form-check-label" for="inlineCheckbox2">От 3 лет</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input name="experience" value="5" class="form-check-input" type="radio" id="inlineCheckbox2">
+            <label class="form-check-label" for="inlineCheckbox2">Более 5 лет</label>
+          </div>
+        </div>
+        <label for="exampleFormControlInput3" class="form-label">Желаемая оплата в час</label>
+        <input name="price" type="text" class="form-control" id="exampleFormControlInput1" value="{{mentorElit.price}}">
+
+        <label for="exampleFormControlInput4" class="form-label">Карьера</label>
+        <input name="occupation" type="text" class="form-control" id="exampleFormControlInput1"
+          value="{{mentorElit.occupation}}">
+
+        <label for="exampleFormControlInput5" class="form-label">Город</label>
+        <input name="city" type="text" class="form-control" id="exampleFormControlInput1" value="{{mentorElit.city}}">
+
+        <div name="experience">
+          <p>Ключевые навыки </p>
+          {{#each allTags}}
+          <div class="form-check form-check-inline">
+            <input name="tags" value="{{this.name}}" class="form-check-input" type="checkbox" id="inlineCheckbox1">
+            <label class="form-check-label" for="inlineCheckbox1">{{this.name}}</label>
+          </div>
+          {{/each}}
+        <input type="submit" value="Update" tabindex="3"
+          class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+    </div>
+    <div class="d-flex justify-content-center">
+      <a href="/personalacc/:{{mentorElit._id}}">Удалить вашу анкету?</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+</form>
+</div>

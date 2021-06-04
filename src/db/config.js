@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 const options = {
   useNewUrlParser: true,
@@ -9,8 +10,9 @@ const options = {
   bufferMaxEntries: 0,
 };
 
-const DB_HOST = "localhost";
-const DB_NAME = "MENTORS";
-const DB_PORT = 27017;
-const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+// const DB_HOST = 'localhost';
+// const DB_NAME = 'MENTORS';
+// const DB_PORT = 27017;
+// const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+const dbConnectionURL = process.env.connectionURL;
 module.exports = { dbConnectionURL, options };

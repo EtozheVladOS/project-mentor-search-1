@@ -1,21 +1,22 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const mentSchema = mongoose.Schema({
   name: {
     type: String,
     requried: true,
-    min: 3,
   },
-  mail: {
+  email: {
     type: String,
     requried: true,
-    min: 5,
-    unique: true,
   },
   password: {
     type: String,
     requried: true,
     min: 4,
+  },
+  description: {
+    type: String,
+    requried: true,
   },
   image: {
     type: String,
@@ -29,10 +30,6 @@ const mentSchema = mongoose.Schema({
     type: Number,
     requried: true,
   },
-  description: {
-    type: String,
-    requried: true,
-  },
   occupation: {
     type: String,
     requried: true,
@@ -41,7 +38,7 @@ const mentSchema = mongoose.Schema({
     type: String,
     requried: true,
   },
-  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tags" }],
+  tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tags' }],
 });
 
-module.exports = mongoose.model("Ments", mentSchema);
+module.exports = mongoose.model('Ments', mentSchema);

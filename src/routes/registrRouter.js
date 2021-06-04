@@ -1,5 +1,5 @@
 const { Router } = require('express');
-
+const Ments = require('../db/models/ment.model');
 const mentRouter = Router();
 // const bcrypt = require("bcrypt");
 // // ПАКЕТ ДЛЯ СОЗДАНИЯ ПАРОЛЯ

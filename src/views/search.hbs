@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        {{#each tags}}
+        <a class="nav-link" href="/tag/{{this._id}}">{{this.name}}</a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<form id="searchForm">
+  <dib>
+    <p>Искать по:</p>
+    <select name="searchParams" class="form-select" style="width: 200px;" aria-label="Default select example">
+      <option value="1">По технологии</option>
+      <option value="2">По опыту</option>
+      <option value="3">По имени</option>
+    </select>
+  </dib>
+
+  <div class="col-md">
+    <div class="form-floating" style="width: 400px;">
+      <input name="textFromSearch" type="text" class="form-control" id="floatingInputGrid" placeholder="JavaScript">
+      <label for="floatingInputGrid">Например JavaScript</label>
+    </div>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Искать</button>
+  </div>
+</form>
+
+
+  <div id="cardContainer" class="row row-cols-1 row-cols-md-3 g-4">
+    
+  </div>

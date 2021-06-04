@@ -6,6 +6,10 @@ const morgan = require('morgan');
 const secretKey = require('crypto').randomBytes(64).toString('hex');
 const { connect } = require('./src/db/db');
 const indexRouter = require('./src/routes/index.router');
+const searchRouter = require('./src/routes/search.router');
+
+// const entriesRouter = require('./routes/entries');
+// const indexRouter = require('./src/routes/index.router');
 const mentorRouter = require('./src/routes/mentor.router');
 
 const registrRouter = require('./src/routes/registrRouter');
@@ -54,6 +58,7 @@ app.use('/signIn', signInRender);
 app.use('/signUp', registrRouter);
 app.use('/logout', signOutRouter);
 app.use('/personalacc', lcRouter);
+app.use('/search', searchRouter);
 
 app.listen(PORT, () => {
   console.log('Server started on PORT', PORT);

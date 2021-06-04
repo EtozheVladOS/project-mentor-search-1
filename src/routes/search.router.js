@@ -6,8 +6,11 @@ const MentorModel = require('../db/models/ment.model');
 const TagModel = require('../db/models/tag.model');
 
 router.get('/', async (req, res) => {
+ 
+  let sessionTrue =  await res.locals.newId;
+  console.log(sessionTrue);
   const tags = await TagModel.find().limit(8);
-  res.render('search', { tags });
+  res.render('search', { tags, sessionTrue });
 });
 
 router.post('/', async (req, res) => {

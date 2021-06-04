@@ -18,9 +18,10 @@ router.get("/", async (req, res) => {
 
 });
 
-async function add(updateUser, tags) {
+async function add(updateUser,arr) {
     // console.log("ДЛИНА", updateUser.tags.length);
-    let arr = tags;
+    
+    console.log("arr", arr)
     // console.log(arr.length)
     // console.log("arrr", tags)
      for (let i = 0; i < arr.length; i++) {
@@ -34,9 +35,12 @@ async function add(updateUser, tags) {
 }
 
 router.post("/", async (req, res) => {
+  console.log("VOT TUT", req.body);
     let sessionTrue = res.locals.newId;
     const mentor = await Ments.findById(sessionTrue);
     const mentorElit = mentor;
+    console.log(mentorElit);
+    let arr = req.body.tags;
     // console.log("ona tyt est", req.body);
     // eslint-disable-next-line max-len
     const updateUser = await Ments.findByIdAndUpdate(
@@ -55,7 +59,7 @@ router.post("/", async (req, res) => {
     await updateUser.save();
    
     await add(updateUser, req.body.tags);
-    console.log(updateUser)
+    console.log("updateUser",updateUser)
 
      await res.redirect("/");
 });

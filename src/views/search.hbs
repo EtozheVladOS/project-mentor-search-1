@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
@@ -11,14 +11,15 @@
 </nav>
 
 <form id="searchForm">
-  <dib>
+  <center>
+  <div class="searchbar">
     <p>Искать по:</p>
     <select name="searchParams" class="form-select" style="width: 200px;" aria-label="Default select example">
       <option value="1">По технологии</option>
       <option value="2">По имени</option>
     </select>
     <br>
-  </dib>
+  </div>
 
   <div name="expSearch">
     <p>Опыт ментора:</p>
@@ -45,8 +46,9 @@
   </div>
   <br>
   <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">Искать</button>
+    <button type="submit" class="btn btn-primary mb-3" id="searchbutton">Искать</button>
   </div>
+  </center>
 </form>
 
 

@@ -11,3 +11,23 @@ body {
 .collapse {
   justify-content: center;
 }
+
+.searchbar {
+  margin: 20px;
+}
+
+#signbutton {
+  background-color: #586d8d;
+}
+
+#regbutton {
+  background-color: #586d8d;
+}
+
+#mentorbutton {
+  background-color: #586d8d;
+}
+
+#searchbutton {
+  background-color: #586d8d;
+}

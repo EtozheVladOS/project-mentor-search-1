@@ -34,15 +34,15 @@ const formForMent = `
       <div name="experience">
         <p>Ваш опыт </p>
         <div class="form-check form-check-inline">
-          <input name="experienceMent" value="1" class="form-check-input" type="radio" id="inlineCheckbox1">
+          <input name="experience" value="1" class="form-check-input" type="radio" id="inlineCheckbox1">
           <label class="form-check-label" for="inlineCheckbox1">От 1 года</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="experienceMent" value="3" class="form-check-input" type="radio" id="inlineCheckbox2">
+          <input name="experience" value="3" class="form-check-input" type="radio" id="inlineCheckbox2">
           <label class="form-check-label" for="inlineCheckbox2">От 3 лет</label>
         </div>
         <div class="form-check form-check-inline">
-          <input name="experienceMent" value="5" class="form-check-input" type="radio" id="inlineCheckbox2">
+          <input name="experience" value="5" class="form-check-input" type="radio" id="inlineCheckbox2">
           <label class="form-check-label" for="inlineCheckbox2">Более 5 лет</label>
         </div>
       </div>

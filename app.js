@@ -52,7 +52,7 @@ app.use((req, res, next) => {
   if (req.session.newId) {
     
     res.locals.newId = req.session.newId;
-    console.log("vot ona", res.locals.newId)
+    
     
     // console.log( "req.session.user.id - est!!",req.session.user.id);
       // res.locals.name = req.session.name;

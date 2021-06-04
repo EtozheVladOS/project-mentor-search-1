@@ -4,13 +4,10 @@ const mentSchema = mongoose.Schema({
   name: {
     type: String,
     requried: true,
-    min: 3,
   },
   email: {
     type: String,
     requried: true,
-    min: 5,
-
   },
   password: {
     type: String,
@@ -20,8 +17,6 @@ const mentSchema = mongoose.Schema({
   description: {
     type: String,
     requried: true,
-    min: 200,
-
   },
   image: {
     type: String,
@@ -33,11 +28,6 @@ const mentSchema = mongoose.Schema({
   },
   price: {
     type: Number,
-    requried: true,
-  },
-  // eslint-disable-next-line no-dupe-keys
-  description: {
-    type: String,
     requried: true,
   },
   occupation: {

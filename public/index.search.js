@@ -1,8 +1,10 @@
 const $form = document.querySelector('#searchForm');
 const $cardsContainer = document.querySelector('#cardContainer');
+// const $options = document.querySelector('.form-select');
 
 $form?.addEventListener('submit', async (event) => {
   event.preventDefault();
+
   const dataFromForm = Object.fromEntries(new FormData(event.target));
   const responce = await fetch('/search', {
     method: 'POST',
@@ -15,8 +17,7 @@ $form?.addEventListener('submit', async (event) => {
     const $curCards = document.querySelector('[name="card"]');
     $curCards?.remove();
     $cardsContainer.insertAdjacentHTML('afterbegin', '<p name="card">Ничего не нашлось :(</p>');
-  }
-  else {
+  } else {
     const $curCards = document.querySelector('[name="card"]');
     $curCards?.remove();
     const dataFromServer = await responce.json();

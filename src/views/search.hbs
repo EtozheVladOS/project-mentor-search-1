@@ -15,10 +15,27 @@
     <p>Искать по:</p>
     <select name="searchParams" class="form-select" style="width: 200px;" aria-label="Default select example">
       <option value="1">По технологии</option>
-      <option value="2">По опыту</option>
       <option value="3">По имени</option>
     </select>
+    <br>
   </dib>
+
+  <div name="expSearch">
+    <p>Опыт ментора:</p>
+    <div class="form-check form-check-inline">
+      <input name="expSearch" value="1" class="form-check-input" type="radio" id="inlineCheckbox1">
+      <label class="form-check-label" for="inlineCheckbox1">От года</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input name="expSearch" value="3" class="form-check-input" type="radio" id="inlineCheckbox2">
+      <label class="form-check-label" for="inlineCheckbox2">От 3 лет</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input name="expSearch" value="5" class="form-check-input" type="radio" id="inlineCheckbox2">
+      <label class="form-check-label" for="inlineCheckbox2">Более 5 лет</label>
+    </div>
+  </div>
+
 
   <div class="col-md">
     <div class="form-floating" style="width: 400px;">
@@ -26,12 +43,11 @@
       <label for="floatingInputGrid">Например JavaScript</label>
     </div>
   </div>
+  <br>
   <div class="col-auto">
     <button type="submit" class="btn btn-primary mb-3">Искать</button>
   </div>
 </form>
 
 
-  <div id="cardContainer" class="row row-cols-1 row-cols-md-3 g-4">
-    
-  </div>
+<div id="cardContainer" class="row row-cols-1 row-cols-md-3 g-4"></div>

@@ -1,6 +1,5 @@
 const { Router } = require('express');
 const router = Router();
-const mongoose = require('mongoose');
 const MentorModel = require('../db/models/ment.model');
 const TagModel = require('../db/models/tag.model');
 
@@ -26,10 +25,6 @@ router.get('/tag/:id', async (req, res) => {
     if (el) resMentors.push(el);
   }
   res.render('tag', { tagsq, resMentors });
-});
-
-router.get('/search', (req, res) => {
-  res.render('search');
 });
 
 module.exports = router;

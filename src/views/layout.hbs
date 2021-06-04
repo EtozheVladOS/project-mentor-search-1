@@ -19,10 +19,13 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Главная</a>
         <a class="navbar-brand" href="/search">Поиск ментора</a>
-        <a class="navbar-brand" href="/signIn">Войти</a>
-        <a class="navbar-brand" href="/signUp">Регистрация</a>
-        <a class="navbar-brand" href="/logout">Выйти</a>
+        {{#if name}}
         <a class="navbar-brand" href="/personalacc">Личный кабинет</a>
+        <a class="navbar-brand" href="/logout">Выйти</a>
+        {{else}}
+        <a class="navbar-brand" href="/signUp">Регистрация</a>
+        <a class="navbar-brand" href="/signIn">Войти</a>
+        {{/if}}
       </div>
     </nav>
   </div>

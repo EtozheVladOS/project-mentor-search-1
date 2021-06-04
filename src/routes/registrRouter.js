@@ -9,8 +9,11 @@ const saltRound = 10; // ПО СТАНДАРТУ (подключения)
 // npm i bcrypt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-mentRouter.get("/", (req, res) => {
-  res.render("signUp");
+
+
+
+mentRouter.get('/', (req, res) => {
+  res.render('signUp');
 });
 
 mentRouter.post("/", async (req, res) => {
@@ -19,15 +22,13 @@ mentRouter.post("/", async (req, res) => {
   if (name && email && cryptPass) {
     const password = await bcrypt.hash(cryptPass, saltRound);
     const newMent = await Ments.create({ name, email, password });
-     if (newMent){
-      req.session.user = {id: newMent._id}
-      return res.redirect('/personalacc')
+    if (newMent) {
+      console.log('hi!')
+      req.session.user = { id: newMent._id, name: newMent.name };
+      return res.redirect('/personalacc');
     }
-
- }
-  return res.status(418).redirect('/signUp')
+  }
+  return res.status(418).redirect('/signUp');
 });
-
-
 
 module.exports = mentRouter;
